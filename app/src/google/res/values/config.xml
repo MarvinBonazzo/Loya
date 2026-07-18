@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Loya – Google</string>
+    <string name="distribution_id" translatable="false">google</string>
+    <bool name="document_scanner_requires_camera">false</bool>
+</resources>

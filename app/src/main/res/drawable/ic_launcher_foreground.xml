@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Loya monogram -->
+    <path
+        android:pathData="M31,31h46c5.5,0 10,4.5 10,10v38c0,5.5 -4.5,10 -10,10H31c-5.5,0 -10,-4.5 -10,-10V41c0,-5.5 4.5,-10 10,-10z"
+        android:fillColor="#123C34"/>
+    <path
+        android:pathData="M41,42v30h25"
+        android:strokeWidth="8"
+        android:strokeColor="#FFFDF7"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"/>
+    <path
+        android:pathData="M72,63a4,4 0,1 0,0,8a4,4 0,1 0,0,-8"
+        android:fillColor="#FF7F66"/>
+
+    <!-- Scan corners -->
+    <path
+        android:pathData="M17,34V23c0,-3.3 2.7,-6 6,-6h11M74,17h11c3.3,0 6,2.7 6,6v11M91,74v11c0,3.3 -2.7,6 -6,6H74M34,91H23c-3.3,0 -6,-2.7 -6,-6V74"
+        android:strokeWidth="4"
+        android:strokeColor="#123C34"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+</vector>

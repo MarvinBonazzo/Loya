@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_title">Inquadra il codice</string>
+    <string name="scanner_subtitle">QR e codici a barre vengono riconosciuti automaticamente</string>
+    <string name="scanner_close">Chiudi</string>
+    <string name="scanner_close_description">Chiudi scanner</string>
+    <string name="scanner_starting_camera">Avvio fotocamera…</string>
+    <string name="scanner_status_ready">Pronto · elaborazione locale</string>
+    <string name="scanner_status_focusing">Messa a fuoco…</string>
+    <string name="scanner_torch_on">Accendi torcia</string>
+    <string name="scanner_torch_off">Spegni torcia</string>
+    <string name="scanner_torch_description">Attiva o disattiva la torcia</string>
+    <string name="offline_scanner_badge">OFFLINE · ZERO CLOUD</string>
+    <string name="offline_scanner_badge_description">Scansione elaborata solo sul dispositivo</string>
+    <string name="google_scanner_badge">GOOGLE ML KIT · SUL DISPOSITIVO</string>
+    <string name="google_scanner_badge_description">Riconoscimento eseguito da Google ML Kit sul dispositivo</string>
+    <string name="google_scanner_status_ready">Pronto · elaborazione ML Kit</string>
+
+    <string name="document_scanner_title">Scansiona documento</string>
+    <string name="document_scanner_subtitle">Ritaglio, prospettiva e leggibilità corretti sul dispositivo</string>
+    <string name="document_engine_unavailable">Motore documenti non disponibile</string>
+    <string name="document_status_ready">Inquadra tutti i bordi e scatta</string>
+    <string name="document_offline_badge">SOLO SUL DISPOSITIVO</string>
+    <string name="document_starting_scanner">Avvio scanner locale…</string>
+    <string name="document_gallery">Galleria</string>
+    <string name="document_torch">Torcia</string>
+    <string name="document_remove_last">Rimuovi ultima</string>
+    <string name="document_capture">SCATTA</string>
+    <string name="document_save">Salva</string>
+    <plurals name="document_page_limit">
+        <item quantity="one">Limite di %1$d pagina raggiunto</item>
+        <item quantity="other">Limite di %1$d pagine raggiunto</item>
+    </plurals>
+    <string name="document_page_count">%1$d/%2$d</string>
+    <string name="document_capturing">Acquisizione…</string>
+    <string name="document_camera_not_ready">Fotocamera non ancora pronta</string>
+    <string name="document_import_pages">Importa pagine</string>
+    <string name="document_correcting_pages">Correzione delle pagine…</string>
+    <string name="document_images_unreadable">Immagini non leggibili</string>
+    <string name="document_page_corrected">Pagina corretta · puoi aggiungerne un’altra</string>
+    <string name="document_processing_failed">Non sono riuscito a elaborare la pagina. Riprova</string>
+    <string name="document_last_page_removed">Ultima pagina rimossa</string>
+    <string name="document_guide">Tieni visibili i quattro bordi</string>
+    <plurals name="document_pages_corrected">
+        <item quantity="one">%1$d pagina corretta</item>
+        <item quantity="other">%1$d pagine corrette</item>
+    </plurals>
+
+    <string name="camera_capture_failed">Acquisizione non riuscita</string>
+    <string name="camera_rear_unavailable">Fotocamera posteriore non disponibile</string>
+    <string name="camera_disconnected">Fotocamera scollegata</string>
+    <string name="camera_unavailable">Fotocamera non disponibile</string>
+    <string name="camera_open_failed">Non riesco ad aprire la fotocamera</string>
+    <string name="camera_configuration_failed">Configurazione fotocamera non riuscita</string>
+
+    <string name="choose_image">Scegli immagine</string>
+    <string name="no_pages_captured">Nessuna pagina acquisita</string>
+    <string name="camera_permission_required">Consenti l’accesso alla fotocamera per scansionare</string>
+    <string name="google_document_open_failed">Non riesco ad aprire lo scanner documenti Google</string>
+    <string name="google_document_unavailable">Scanner documenti Google non disponibile su questo dispositivo</string>
+    <string name="google_document_copy_failed">Non sono riuscito a salvare le pagine acquisite</string>
+</resources>

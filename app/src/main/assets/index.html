@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Loya — the digital wallet that can contain everything.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Loya">
+  <title>Loya</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <rect x="8" y="11" width="24" height="18" rx="5" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M8 17h24M25 23h3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M4 12V7a3 3 0 0 1 3-3h5M28 4h5a3 3 0 0 1 3 3v5M36 28v5a3 3 0 0 1-3 3h-5M12 36H7a3 3 0 0 1-3-3v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-name">Loya</span>
+          <span class="brand-subtitle" data-i18n="brand.subtitle">Wallet locale</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="privacy-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-distribution-i18n="status">Senza servizi Google</span>
+        </div>
+        <button id="btn-language" class="language-button" type="button" aria-label="Passa all’inglese" data-i18n-aria-label="language.switch">IT / EN</button>
+      </div>
+    </header>
+
+    <main id="home-scroll">
+      <section class="hero">
+        <p class="eyebrow" data-i18n="hero.eyebrow">IL TUO PORTAFOGLIO</p>
+        <h1 data-i18n-html="hero.title">SICURO AL 100% E<br>SENZA PUBBLICITÀ.<br><span>(niente cazzate)</span></h1>
+        <p class="hero-copy" data-i18n="hero.copy">Tessere, documenti e biglietti ordinati, veloci da aprire e conservati in privato sul dispositivo.</p>
+
+        <div class="quick-actions">
+          <button id="btn-quick-card" class="quick-action quick-card">
+            <span class="quick-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5v4M3 15v4M21 5v4M21 15v4M7 4v16M10 4v16M14 4v16M18 4v16"/></svg>
+            </span>
+            <span><strong data-i18n="quick.card.title">Scansiona tessera / biglietto</strong><small data-i18n="quick.card.copy">QR, barre, Aztec e PDF417</small></span>
+            <svg class="action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <button id="btn-quick-document" class="quick-action quick-document">
+            <span class="quick-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+            </span>
+            <span><strong data-i18n="quick.document.title">Scansiona documento</strong><small data-distribution-i18n="document">Correzione locale automatica</small></span>
+            <svg class="action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="library">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="view-eyebrow">IL MIO ARCHIVIO</p>
+            <h2 id="view-title">Portafoglio</h2>
+          </div>
+          <span id="items-count">0 tessere</span>
+        </div>
+
+        <div id="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="search-input" placeholder="Cerca nel portafoglio" autocomplete="off">
+        </div>
+
+        <div id="category-tabs">
+          <button class="tab active" data-cat="all" data-i18n="tab.all">Tutte</button>
+          <button class="tab" data-cat="fedelta" data-i18n="tab.loyalty">Fedeltà</button>
+          <button class="tab" data-cat="trasporti" data-i18n="tab.tickets">Biglietti</button>
+          <button class="tab" data-cat="documenti" data-i18n="tab.documents">Documenti</button>
+          <button class="tab" data-cat="altro" data-i18n="tab.other">Altro</button>
+        </div>
+
+        <div id="cards-list">
+          <div id="empty-state">
+            <div class="empty-illustration">
+              <svg viewBox="0 0 100 78" fill="none">
+                <rect x="19" y="17" width="62" height="43" rx="10" transform="rotate(-6 19 17)" fill="#D7FF72" stroke="#102B25" stroke-width="2"/>
+                <rect x="15" y="24" width="70" height="44" rx="10" fill="#FFFDF7" stroke="#102B25" stroke-width="2"/>
+                <path d="M25 42h22M25 50h13" stroke="#102B25" stroke-width="3" stroke-linecap="round"/>
+                <rect x="66" y="39" width="9" height="9" rx="2" fill="#FF7F66"/>
+              </svg>
+            </div>
+            <h3 id="empty-title">Il portafoglio è vuoto</h3>
+            <p id="empty-copy">Scansiona il codice della prima tessera: bastano pochi secondi.</p>
+            <button id="empty-action" class="secondary-action">Aggiungi la prima tessera</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="app-license" data-i18n="footer.license">Open source · Licenza MIT · Marvin</footer>
+    </main>
+
+    <nav id="bottom-nav" aria-label="Azioni principali" data-i18n-aria-label="nav.actions">
+      <button id="btn-project" class="project-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>
+        <span data-i18n="project.button">Il progetto</span>
+      </button>
+      <button id="btn-add" class="nav-add" aria-label="Aggiungi manualmente" data-i18n-aria-label="add.manual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </nav>
+
+    <div id="modal-add" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-content form-sheet">
+        <div class="sheet-handle"></div>
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow" id="form-eyebrow">NUOVA TESSERA / BIGLIETTO</p>
+            <h2 id="form-title">Aggiungi al wallet</h2>
+          </div>
+          <button class="icon-btn close-add" aria-label="Chiudi" data-i18n-aria-label="close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="entry-switch" role="tablist">
+          <button class="entry-type active" data-kind="card" role="tab" data-i18n="form.typeCard">Tessera / Biglietto</button>
+          <button class="entry-type" data-kind="document" role="tab" data-i18n="form.typeDocument">Documento</button>
+        </div>
+
+        <div id="document-presets" class="form-group hidden">
+          <label data-i18n="form.documentQuestion">Che documento è?</label>
+          <div class="preset-chips">
+            <button data-preset="license" data-i18n="preset.license">Patente</button>
+            <button data-preset="id" data-i18n="preset.id">Carta d'identità</button>
+            <button data-preset="health" data-i18n="preset.health">Tessera sanitaria</button>
+            <button data-preset="passport" data-i18n="preset.passport">Passaporto</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="card-name" data-i18n="form.name">Nome</label>
+          <input type="text" id="card-name" placeholder="Es. Esselunga" data-i18n-placeholder="form.namePlaceholder" autocomplete="off">
+        </div>
+
+        <div class="form-group card-only">
+          <label for="card-category" data-i18n="form.category">Categoria</label>
+          <select id="card-category">
+            <option value="fedelta" data-i18n="form.loyalty">Carta fedeltà</option>
+            <option value="trasporti" data-i18n="form.transport">Biglietto / trasporti</option>
+            <option value="altro" data-i18n="form.other">Altro</option>
+          </select>
+        </div>
+
+        <div class="form-group card-only">
+          <div class="label-row"><label for="card-code" data-i18n="form.code">Codice</label><span id="scan-status">Inserisci o scansiona</span></div>
+          <div class="code-input-group">
+            <input type="text" id="card-code" placeholder="Numero o contenuto del QR" data-i18n-placeholder="form.codePlaceholder" autocomplete="off">
+            <button id="btn-scan" class="scan-btn" aria-label="Scansiona codice" data-i18n-aria-label="form.scanCode">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3M7 9h10M7 12h5M7 15h10"/></svg>
+              <span data-i18n="form.scan">Scansiona</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group card-only" id="format-group">
+          <label data-i18n="form.detectedFormat">Formato rilevato</label>
+          <div id="format-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span id="format-badge-text" data-i18n="form.automatic">Automatico</span>
+          </div>
+          <input type="hidden" id="card-format" value="">
+        </div>
+
+        <div class="form-group card-only">
+          <label data-i18n="form.cardColor">Colore tessera</label>
+          <div id="color-picker">
+            <button class="color-dot active" data-color="#123C34" style="--dot:#123C34" aria-label="Verde bosco" data-i18n-aria-label="color.forest"></button>
+            <button class="color-dot" data-color="#3155A6" style="--dot:#3155A6" aria-label="Blu" data-i18n-aria-label="color.blue"></button>
+            <button class="color-dot" data-color="#E85D43" style="--dot:#E85D43" aria-label="Corallo" data-i18n-aria-label="color.coral"></button>
+            <button class="color-dot" data-color="#7B4BA6" style="--dot:#7B4BA6" aria-label="Viola" data-i18n-aria-label="color.purple"></button>
+            <button class="color-dot" data-color="#CA8B19" style="--dot:#CA8B19" aria-label="Ocra" data-i18n-aria-label="color.ochre"></button>
+            <button class="color-dot" data-color="#3C6E71" style="--dot:#3C6E71" aria-label="Petrolio" data-i18n-aria-label="color.teal"></button>
+          </div>
+        </div>
+
+        <div class="form-group" id="photo-group">
+          <div class="label-row"><label id="photo-label">Immagini (opzionali)</label><span id="photo-count"></span></div>
+          <input type="file" id="card-photo-input" accept="image/*" class="hidden">
+          <div id="photos-thumbs" class="hidden"></div>
+          <div class="photo-actions">
+            <button id="btn-scan-document" class="document-scan-btn hidden">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/><rect x="7" y="7" width="10" height="10" rx="2"/></svg>
+              <span><strong data-i18n="quick.document.title">Scansiona documento</strong><small data-distribution-i18n="documentDetail">Ritaglio locale, prospettiva e multipagina</small></span>
+            </button>
+            <button id="btn-add-photo" class="photo-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16l4-4 4 4 3-3 5 5"/><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="16" cy="9" r="1.5"/></svg>
+              <span data-i18n="form.importGallery">Importa dalla galleria</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="card-notes"><span data-i18n="form.notes">Note</span> <span class="optional" data-i18n="form.optional">opzionali</span></label>
+          <textarea id="card-notes" placeholder="Aggiungi un dettaglio utile..." data-i18n-placeholder="form.notesPlaceholder" rows="3"></textarea>
+        </div>
+
+        <button id="btn-save" class="primary-btn">Salva tessera</button>
+        <p class="local-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-distribution-i18n="storage">Scanner e salvataggio locali · nessun cloud</span></p>
+      </div>
+    </div>
+
+    <div id="modal-scanner" class="modal hidden">
+      <div class="modal-content scanner-content">
+        <div class="modal-header">
+          <div><p class="eyebrow" data-i18n="scanner.eyebrow">SCANSIONE</p><h2 data-i18n="scanner.title">Inquadra il codice</h2></div>
+          <button class="icon-btn close-scanner" aria-label="Chiudi" data-i18n-aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <div id="scanner-container"><video id="scanner-video" playsinline autoplay></video><div id="scan-overlay"><div class="scan-frame"><span></span></div></div></div>
+        <p class="scan-hint" data-i18n="scanner.hint">Avvicina il codice all'area evidenziata</p>
+      </div>
+    </div>
+
+    <div id="modal-detail" class="modal hidden">
+      <div class="detail-content">
+        <div class="detail-header">
+          <button class="icon-btn back-btn" aria-label="Indietro" data-i18n-aria-label="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+          <div class="detail-title"><span id="detail-category"></span><h2 id="detail-name"></h2></div>
+          <div class="detail-actions">
+            <button class="icon-btn" id="btn-edit" aria-label="Modifica" data-i18n-aria-label="edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg></button>
+            <button class="icon-btn" id="btn-delete" aria-label="Elimina" data-i18n-aria-label="delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6M10 11v6M14 11v6"/></svg></button>
+          </div>
+        </div>
+        <div id="detail-body">
+          <div class="barcode-pass">
+            <div id="barcode-display"></div>
+            <p id="detail-code"></p>
+          </div>
+          <div id="detail-photo-container" class="hidden"></div>
+          <p id="detail-notes" class="hidden"></p>
+        </div>
+        <p class="brightness-hint" data-i18n="detail.brightness">Luminosità aumentata per una lettura più semplice</p>
+      </div>
+    </div>
+
+    <div id="modal-confirm" class="modal hidden">
+      <div class="confirm-content">
+        <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 15H6L5 6"/></svg></div>
+        <h3 data-i18n="confirm.title">Vuoi eliminare questo elemento?</h3>
+        <p data-i18n="confirm.copy">Le immagini salvate localmente verranno rimosse dal dispositivo.</p>
+        <div class="confirm-actions"><button id="btn-cancel-delete" class="secondary-btn" data-i18n="cancel">Annulla</button><button id="btn-confirm-delete" class="danger-btn" data-i18n="delete">Elimina</button></div>
+      </div>
+    </div>
+
+    <div id="modal-project" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-content project-sheet">
+        <div class="sheet-handle"></div>
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow" data-i18n="project.eyebrow">OPEN SOURCE</p>
+            <h2 data-i18n="project.title">Il progetto</h2>
+          </div>
+          <button class="icon-btn close-project" aria-label="Chiudi progetto" data-i18n-aria-label="project.close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="project-hero">
+          <div class="project-mark">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="11" width="24" height="18" rx="5" stroke="currentColor" stroke-width="2.4"/><path d="M8 17h24M25 23h3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 12V7a3 3 0 0 1 3-3h5M28 4h5a3 3 0 0 1 3 3v5M36 28v5a3 3 0 0 1-3 3h-5M12 36H7a3 3 0 0 1-3-3v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="project.hero">Privacy, per davvero.</h3>
+          <p data-distribution-i18n="description">Loya nasce per non appoggiarsi a servizi che raccolgono o condividono i tuoi dati. Scanner indipendenti dai servizi Google, nessun account, nessuna pubblicità e nessun archivio remoto: immagini e codici restano sul tuo dispositivo.</p>
+        </div>
+
+        <div class="project-values">
+          <div><strong data-i18n="project.free.title">Gratuito</strong><span data-i18n="project.free.copy">Nessun abbonamento o funzione bloccata.</span></div>
+          <div><strong data-i18n="project.functional.title">Funzionale</strong><span data-i18n="project.functional.copy">Fa il suo lavoro senza profilazione e distrazioni.</span></div>
+          <div><strong data-i18n="project.opensource.title">Open source</strong><span data-i18n="project.opensource.copy">Codice aperto, verificabile e migliorabile da tutti.</span></div>
+          <div><strong data-distribution-i18n="scannerTitle">Scansione locale</strong><span data-distribution-i18n="scannerCopy">QR, barcode e documenti vengono elaborati offline, senza servizi Google né cloud.</span></div>
+        </div>
+
+        <div class="language-setting">
+          <strong data-i18n="project.language">Lingua dell’app</strong>
+          <div class="language-options" role="group" aria-label="App language" data-i18n-aria-label="project.language">
+            <button type="button" data-language="it">Italiano</button>
+            <button type="button" data-language="en">English</button>
+          </div>
+        </div>
+
+        <div class="data-tools">
+          <strong data-i18n="backup.title">Backup e ripristino</strong>
+          <p data-i18n="backup.copy">Salva tutto il wallet, incluse le immagini, in un unico file da conservare o trasferire su un altro dispositivo.</p>
+          <div class="backup-actions">
+            <button id="btn-export-backup" type="button" class="backup-btn backup-btn-primary" data-i18n="backup.export">Crea backup</button>
+            <button id="btn-import-backup" type="button" class="backup-btn" data-i18n="backup.import">Ripristina backup</button>
+          </div>
+          <p class="backup-privacy" data-i18n="backup.privacy">Loya non carica il backup online. Se scegli un servizio cloud nel selettore di sistema, sarà quel servizio a conservarlo.</p>
+          <p class="backup-warning-inline" data-i18n="backup.plaintext">Il backup non è cifrato: chiunque abbia il file può leggere codici, note e immagini. Conservalo in un luogo privato.</p>
+          <input id="backup-file-input" class="visually-hidden" type="file" accept=".json,application/json">
+        </div>
+
+        <div class="project-license"><span data-i18n="project.license">Licenza MIT</span><strong>© 2026 Marvin</strong></div>
+        <p class="third-party-note" data-distribution-i18n="thirdParty">Motori locali open source: ZXing e OpenCV · Apache 2.0. Licenze incluse nell’app.</p>
+      </div>
+    </div>
+
+    <div id="modal-backup-import" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="backup-import-title">
+      <div class="confirm-content backup-confirm-content">
+        <div class="confirm-icon backup-confirm-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2"/></svg>
+        </div>
+        <h3 id="backup-import-title" data-i18n="backup.confirmTitle">Sostituire il wallet?</h3>
+        <p id="backup-import-summary"></p>
+        <p class="backup-warning" data-i18n="backup.warning">Attenzione: gli elementi e le immagini presenti ora verranno eliminati e sostituiti da quelli del backup. Questa operazione non può essere annullata.</p>
+        <div class="confirm-actions">
+          <button id="btn-cancel-import" type="button" class="secondary-btn" data-i18n="cancel">Annulla</button>
+          <button id="btn-confirm-import" type="button" class="danger-btn" data-i18n="backup.replace">Sostituisci</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+  </div>
+
+  <script src="js/jsbarcode.min.js"></script>
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

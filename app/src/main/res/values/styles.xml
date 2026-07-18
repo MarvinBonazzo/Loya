@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Loya.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">#FFF5F4EF</item>
+        <item name="android:statusBarColor">#FFF5F4EF</item>
+        <item name="android:navigationBarColor">#FFF5F4EF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="Theme.Loya" parent="Theme.Loya.Base" />
+
+    <style name="Theme.Loya.Scanner.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">#FF071A17</item>
+        <item name="android:statusBarColor">#FF071A17</item>
+        <item name="android:navigationBarColor">#FF071A17</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.Loya.Scanner" parent="Theme.Loya.Scanner.Base" />
+</resources>

@@ -1,0 +1,59 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Android Studio and editor-local state
+.idea/
+*.iml
+.vscode/
+.claude/
+
+# Gradle, Kotlin, and native build caches
+.gradle/
+.kotlin/
+**/build/
+.externalNativeBuild/
+.cxx/
+captures/
+out/
+*.hprof
+*.log
+
+# Machine-local Android SDK configuration
+local.properties
+
+# Release signing material and local signing configuration
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+secrets.properties
+
+# Environment files and cloud/service credentials
+.env
+.env.*
+!.env.example
+!**/.env.example
+google-services.json
+**/google-services.json
+service-account*.json
+firebase-adminsdk-*.json
+client_secret*.json
+credentials*.json
+
+# Packaged Android artifacts belong in GitHub Releases, not Git history
+dist/
+*.apk
+*.aab
+*.apks
+*.idsig
+
+# Keep the Gradle wrapper scripts, properties, and JAR tracked.
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat

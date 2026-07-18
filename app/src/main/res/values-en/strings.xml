@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scanner_title">Frame the code</string>
+    <string name="scanner_subtitle">QR codes and barcodes are recognized automatically</string>
+    <string name="scanner_close">Close</string>
+    <string name="scanner_close_description">Close scanner</string>
+    <string name="scanner_starting_camera">Starting camera…</string>
+    <string name="scanner_status_ready">Ready · local processing</string>
+    <string name="scanner_status_focusing">Focusing…</string>
+    <string name="scanner_torch_on">Turn on flashlight</string>
+    <string name="scanner_torch_off">Turn off flashlight</string>
+    <string name="scanner_torch_description">Turn the flashlight on or off</string>
+    <string name="offline_scanner_badge">OFFLINE · ZERO CLOUD</string>
+    <string name="offline_scanner_badge_description">Scan processed only on this device</string>
+    <string name="google_scanner_badge">GOOGLE ML KIT · ON DEVICE</string>
+    <string name="google_scanner_badge_description">Recognition performed on device by Google ML Kit</string>
+    <string name="google_scanner_status_ready">Ready · ML Kit processing</string>
+
+    <string name="document_scanner_title">Scan document</string>
+    <string name="document_scanner_subtitle">Crop, perspective and readability are corrected on device</string>
+    <string name="document_engine_unavailable">Document engine unavailable</string>
+    <string name="document_status_ready">Keep every edge visible, then capture</string>
+    <string name="document_offline_badge">ONLY ON THIS DEVICE</string>
+    <string name="document_starting_scanner">Starting local scanner…</string>
+    <string name="document_gallery">Gallery</string>
+    <string name="document_torch">Flashlight</string>
+    <string name="document_remove_last">Remove last</string>
+    <string name="document_capture">CAPTURE</string>
+    <string name="document_save">Save</string>
+    <plurals name="document_page_limit">
+        <item quantity="one">The %1$d-page limit has been reached</item>
+        <item quantity="other">The %1$d-page limit has been reached</item>
+    </plurals>
+    <string name="document_page_count">%1$d/%2$d</string>
+    <string name="document_capturing">Capturing…</string>
+    <string name="document_camera_not_ready">Camera is not ready yet</string>
+    <string name="document_import_pages">Import pages</string>
+    <string name="document_correcting_pages">Correcting pages…</string>
+    <string name="document_images_unreadable">Images could not be read</string>
+    <string name="document_page_corrected">Page corrected · you can add another</string>
+    <string name="document_processing_failed">I could not process this page. Please try again</string>
+    <string name="document_last_page_removed">Last page removed</string>
+    <string name="document_guide">Keep all four edges visible</string>
+    <plurals name="document_pages_corrected">
+        <item quantity="one">%1$d page corrected</item>
+        <item quantity="other">%1$d pages corrected</item>
+    </plurals>
+
+    <string name="camera_capture_failed">Capture failed</string>
+    <string name="camera_rear_unavailable">Rear camera unavailable</string>
+    <string name="camera_disconnected">Camera disconnected</string>
+    <string name="camera_unavailable">Camera unavailable</string>
+    <string name="camera_open_failed">Could not open the camera</string>
+    <string name="camera_configuration_failed">Camera configuration failed</string>
+
+    <string name="choose_image">Choose image</string>
+    <string name="no_pages_captured">No pages were captured</string>
+    <string name="camera_permission_required">Allow camera access to scan</string>
+    <string name="google_document_open_failed">Could not open the Google document scanner</string>
+    <string name="google_document_unavailable">Google document scanner is unavailable on this device</string>
+    <string name="google_document_copy_failed">Could not save the captured pages</string>
+</resources>
